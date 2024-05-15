@@ -1,7 +1,5 @@
 package com.Domain;
 
-import com.Entity.Record;
-
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -23,11 +21,11 @@ public class Computer {
         this.goal = seq.subList(0, 3);
     }
 
-    public Record checkAnswer(List<Integer> userNums) {
+    public Result checkAnswer(List<Integer> userNums) {
         int strike = checkStrikes(userNums);
         int ball = checkBalls(userNums, strike);
 
-        return new Record(strike, ball);
+        return new Result(strike, ball);
     }
 
     public int checkStrikes(List<Integer> userNums) {
